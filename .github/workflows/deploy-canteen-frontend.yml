@@ -1,4 +1,4 @@
-name: Deploy Canteen frontend
+name: Deploy Canteen frontend to GitHub Pages
 
 on:
   push:
