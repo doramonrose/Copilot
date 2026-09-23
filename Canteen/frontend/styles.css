@@ -66,7 +66,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .updated { color: var(--muted); font-size: .78rem; }
 .today-outstanding { grid-column: 2; grid-row: 1; margin-top: 0; padding-left: 18px; border-left: 1px solid rgba(255, 255, 255, .28); text-align: right; }
 .today-outstanding span { display: block; margin-bottom: 4px; color: rgba(255, 255, 255, .74); font-size: .8rem; }
-.today-outstanding strong { display: block; color: #ffb3aa; font-size: 1.7rem; font-weight: 800; }
+.today-outstanding strong { display: inline-block; margin-top: 5px; padding: 5px 12px; color: #8f1f28; background: #ffe0dc; border-radius: 12px; font-size: clamp(1.8rem, 7vw, 2.45rem); font-weight: 800; line-height: 1.1; text-shadow: 0 1px 0 rgba(255, 255, 255, .35); }
 .calendar-panel { padding: 22px; }
 .calendar-month { min-height: 40px; max-width: 190px; padding: 7px 32px 7px 11px; color: var(--ink); background: #f5faf8; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: .85rem; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
@@ -86,7 +86,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .legend-dot--paid { background: #b7e4c8; }
 .legend-dot--unpaid { background: #f0bcb5; }
 .legend-dot--upcoming { background: #fff; border: 1px solid var(--line); }
-.legend-dot--leave { background: #dbe2e0; }
+.legend-dot--leave { background: #f0d77c; }
 .legend-dot--holiday { background: #dbe2e0; }
 .muted { color: var(--muted); }
 .amount { position: relative; z-index: 1; margin-top: 10px; color: var(--teal-dark); font-size: 2.35rem; font-weight: 850; letter-spacing: -.02em; }
