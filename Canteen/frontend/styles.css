@@ -67,6 +67,9 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .today-outstanding { grid-column: 2; grid-row: 1; margin-top: 0; padding-left: 18px; border-left: 1px solid rgba(255, 255, 255, .28); text-align: right; }
 .today-outstanding span { display: block; margin-bottom: 4px; color: rgba(255, 255, 255, .74); font-size: .8rem; }
 .today-outstanding strong { display: inline-block; margin-top: 5px; padding: 5px 12px; color: #8f1f28; background: #ffe0dc; border-radius: 12px; font-size: clamp(1.8rem, 7vw, 2.45rem); font-weight: 800; line-height: 1.1; text-shadow: 0 1px 0 rgba(255, 255, 255, .35); }
+.total-outstanding { position: relative; z-index: 1; grid-column: 2; grid-row: 2; align-self: end; padding-left: 18px; border-left: 1px solid rgba(255, 255, 255, .28); text-align: right; }
+.total-outstanding span { display: block; margin-bottom: 4px; color: rgba(255, 255, 255, .74); font-size: .8rem; }
+.total-outstanding strong { display: inline-block; padding: 4px 10px; color: #fff4c2; font-size: clamp(1.35rem, 5vw, 1.8rem); font-weight: 800; line-height: 1.1; }
 .calendar-panel { padding: 22px; }
 .calendar-month { min-height: 40px; max-width: 190px; padding: 7px 32px 7px 11px; color: var(--ink); background: #f5faf8; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: .85rem; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
@@ -133,6 +136,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 	.hero { padding: 22px 18px; }
 	.today-card { grid-template-columns: 1fr 1fr; min-height: 230px; padding: 23px 20px; border-radius: 20px; }
 	.today-card .today-outstanding { width: auto; }
+	.total-outstanding { width: auto; padding-left: 0; border-left: 0; text-align: right; }
 	.today-amount { margin-top: auto; }
 	.section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
 	.action-panel { flex-direction: column; }

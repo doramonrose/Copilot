@@ -13,6 +13,7 @@
       var name='jsonp_'+Date.now()+'_'+Math.random().toString(36).slice(2), script=document.createElement('script');
       params.callback=name; window[name]=function(result){
         if(action==='dashboard'&&result&&result.success){
+          window.__dashboardData=result.data;
           cleanup();
           call('months').then(function(monthsResult){
             if(monthsResult&&monthsResult.success)availableMonths=monthsResult.data||[];
@@ -31,6 +32,15 @@
   }
   function showError(message,code){var detail=code?' ['+code+']':'';app.innerHTML='<div class="shell"><div class="error">'+esc(message||'เกิดข้อผิดพลาด กรุณาลองใหม่ภายหลัง')+esc(detail)+'</div><button class="button" id="retry">ลองใหม่</button></div>';document.getElementById('retry').onclick=boot;}
   function registration(){app.innerHTML='<div class="shell"><section class="panel"><p class="eyebrow">เริ่มต้นใช้งาน</p><h1 class="title">ลงทะเบียนผู้เช่าพื้นที่</h1><p class="muted">กรุณากรอกรหัสลงทะเบียนจากเจ้าหน้าที่</p><label for="code">รหัสลงทะเบียน</label><input id="code" class="input" maxlength="32" autocomplete="one-time-code"><div class="actions" style="margin-top:14px"><button class="button" id="register">ยืนยัน</button></div></section></div>';document.getElementById('register').onclick=async function(){var button=document.getElementById('register');button.disabled=true;try{var result=await call('register',{code:document.getElementById('code').value});if(!result.success){showError(result.error.message,result.error.code);button.disabled=false;return;}await loadDashboard();}catch(error){button.disabled=false;showError(error.message);}};}
+  function insertTotalOutstanding(){
+    var card=document.querySelector('.today-card'), data=window.__dashboardData;
+    if(!card||!data||card.querySelector('.total-outstanding'))return;
+    var total=document.createElement('div');
+    total.className='total-outstanding';
+    total.innerHTML='<span>ยอดค้างชำระรวมทั้งหมด</span><strong>'+Number(data.totalOutstanding||0).toLocaleString('th-TH')+' บาท</strong>';
+    card.appendChild(total);
+  }
+  new MutationObserver(insertTotalOutstanding).observe(app,{childList:true,subtree:true});
   window.__calendarMonthChanged=function(month){
     selectedCalendarMonth=month;
     call('history',{month:month}).then(function(result){
