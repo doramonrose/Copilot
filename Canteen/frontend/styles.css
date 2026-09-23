@@ -63,6 +63,28 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 17px; }
 .section-heading h2 { margin: 0; }
 .updated { color: var(--muted); font-size: .78rem; }
+.today-outstanding { position: relative; z-index: 1; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .28); text-align: right; }
+.today-outstanding span { display: block; margin-bottom: 4px; color: rgba(255, 255, 255, .74); font-size: .8rem; }
+.today-outstanding strong { display: block; color: #ffe2de; font-size: 1.3rem; }
+.calendar-panel { padding: 22px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.cal-grid.cal-head { margin-bottom: 8px; }
+.cal-weekday { padding: 4px 0; color: var(--muted); font-size: .78rem; font-weight: 700; text-align: center; }
+.cal-day { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); font-size: .86rem; font-weight: 700; }
+.cal-day--empty { border-color: transparent; background: transparent; }
+.cal-day--paid { color: #08734c; background: #dbf3e5; border-color: #b7e4c8; }
+.cal-day--unpaid { color: #a53632; background: #fbdcd8; border-color: #f0bcb5; }
+.cal-day--upcoming { color: var(--ink); background: #fff; border-color: var(--line); }
+.cal-day--leave { color: var(--muted); background: #e9edec; border-color: #dbe2e0; }
+.cal-day--weekend { color: var(--muted); background: #e9edec; border-color: #dbe2e0; }
+.cal-day--today { outline: 2px solid var(--teal); outline-offset: 1px; }
+.cal-legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: .78rem; }
+.legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
+.legend-dot--paid { background: #b7e4c8; }
+.legend-dot--unpaid { background: #f0bcb5; }
+.legend-dot--upcoming { background: #fff; border: 1px solid var(--line); }
+.legend-dot--leave { background: #dbe2e0; }
 .muted { color: var(--muted); }
 .amount { position: relative; z-index: 1; margin-top: 10px; color: var(--teal-dark); font-size: 2.35rem; font-weight: 850; letter-spacing: -.02em; }
 .summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
