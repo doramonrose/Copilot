@@ -65,8 +65,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 .updated { color: var(--muted); font-size: .78rem; }
 .today-outstanding { position: relative; z-index: 1; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .28); text-align: right; }
 .today-outstanding span { display: block; margin-bottom: 4px; color: rgba(255, 255, 255, .74); font-size: .8rem; }
-.today-outstanding strong { display: block; color: #ffe2de; font-size: 1.3rem; }
+.today-outstanding strong { display: block; color: #ffb3aa; font-size: 1.7rem; font-weight: 800; }
+.today-card .today-outstanding { order: -1; flex-basis: 100%; margin-top: 0; padding-top: 0; padding-bottom: 12px; border-top: 0; border-bottom: 1px solid rgba(255, 255, 255, .28); text-align: left; }
 .calendar-panel { padding: 22px; }
+.calendar-month { min-height: 40px; max-width: 190px; padding: 7px 32px 7px 11px; color: var(--ink); background: #f5faf8; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: .85rem; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
 .cal-grid.cal-head { margin-bottom: 8px; }
 .cal-weekday { padding: 4px 0; color: var(--muted); font-size: .78rem; font-weight: 700; text-align: center; }
@@ -129,6 +131,7 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px s
 	.panel { padding: 18px; border-radius: 15px; }
 	.hero { padding: 22px 18px; }
 	.today-card { align-items: flex-start; flex-direction: column; min-height: 230px; padding: 23px 20px; border-radius: 20px; }
+	.today-card .today-outstanding { width: 100%; }
 	.today-amount { margin-top: auto; text-align: left; }
 	.section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
 	.action-panel { flex-direction: column; }
